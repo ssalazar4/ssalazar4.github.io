@@ -2,72 +2,105 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi Portafolio</title>
+  <title>Simón Salazar | Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-  <h1>Simón Salazar Rodriguez</h1>
-  <p>Profesional IT & Operaciones | Transformación hacia Data</p>
+<div class="background-glow"></div>
+
+<nav class="navbar">
+  <h2>Simón Salazar</h2>
+  <div>
+    <a href="#projects">Proyectos</a>
+    <a href="#data">Data</a>
+    <a href="#contact">Contacto</a>
+  </div>
+</nav>
+
+<header class="hero fade-in">
+  <h1>Transformando operaciones con datos</h1>
+  <p>+20 años en IT & Operaciones → Evolucionando a Data & Analytics</p>
+  <a href="#projects" class="btn">Ver proyectos</a>
 </header>
 
-<section id="about">
+<section class="about fade-in">
   <h2>Sobre mí</h2>
   <p>
-    Profesional con más de 20 años de experiencia en IT y operaciones,
-    especializado en optimización de procesos y mejora de eficiencia.
-    Actualmente en transición hacia el análisis de datos y Big Data.
+    He liderado operaciones complejas durante más de 20 años,
+    enfocándome en eficiencia, automatización y resultados.
+    Hoy aplico ese conocimiento al análisis de datos para generar impacto real.
   </p>
 </section>
 
-<section id="experience">
-  <h2>Experiencia destacada</h2>
-  <ul>
-    <li>Optimización de procesos → reducción de costos 30%</li>
-    <li>Implementación de sistemas críticos</li>
-    <li>Liderazgo de equipos multidisciplinarios</li>
-  </ul>
+<section id="projects" class="fade-in">
+  <h2>Proyectos destacados</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Optimización operativa</h3>
+      <p>Reducción de costos del 30% mediante automatización.</p>
+    </div>
+
+    <div class="card">
+      <h3>Automatización IT</h3>
+      <p>Incremento de eficiencia en un 40%.</p>
+    </div>
+
+    <div class="card">
+      <h3>Data Analysis</h3>
+      <p>Identificación de patrones con Python.</p>
+    </div>
+
+  </div>
 </section>
 
-<section id="projects">
-  <h2>Proyectos</h2>
-
-  <div class="project">
-    <h3>Proyecto 1 - Optimización Operativa</h3>
-    <p>Automatización de procesos que redujo tiempos en un 40%.</p>
-  </div>
-
-  <div class="project">
-    <h3>Proyecto 2 Indicadores Claves del mercado de las especies</h3>
-    <p> </p>
-  </div>
-
-</section>
-
-<section id="data">
+<section id="data" class="fade-in">
   <h2>Data Journey</h2>
-  <p>Actualmente aprendiendo Big Data, Python, SQL y visualización.</p>
-  <ul>
-    <li>Proyecto: Análisis de ventas</li>
-    <li>Proyecto: Dashboard de KPIs</li>
-  </ul>
+  <div class="grid">
+
+    <div class="card glow">
+      <h3>Análisis de ventas</h3>
+      <p>Exploración de datos con Pandas.</p>
+    </div>
+
+    <div class="card glow">
+      <h3>Dashboard KPI</h3>
+      <p>Visualización con Power BI.</p>
+    </div>
+
+  </div>
 </section>
 
-<section id="skills">
+<section class="skills fade-in">
   <h2>Skills</h2>
-  <p>Python | SQL | Power BI | Excel | Gestión de proyectos</p>
+  <p>Python · SQL · Power BI · Excel · Automatización · Gestión</p>
 </section>
 
-<section id="contact">
+<section id="contact" class="contact fade-in">
   <h2>Contacto</h2>
   <p>Email: ssalazar1@gmail.com</p>
   <p>GitHub: github.com/ssalazar4</p>
 </section>
 
 <footer>
-  <p>© 2026 - Simon Salazar</p>
+  <p>© 2026 - Simón Salazar</p>
 </footer>
+
+<script>
+  const elements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
