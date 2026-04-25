@@ -1,16 +1,28 @@
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-  background: #0f172a;
+  background: #020617;
   color: #e2e8f0;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* FONDO GLOW */
+.background-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #3b82f6, transparent);
+  top: -100px;
+  left: -100px;
+  filter: blur(150px);
+  z-index: -1;
+}
+
+/* NAV */
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
-  background: #020617;
 }
 
 .navbar a {
@@ -26,16 +38,28 @@ body {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
   color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* BOTÓN */
+.btn {
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
 }
 
 /* SECCIONES */
@@ -43,10 +67,6 @@ section {
   padding: 60px 40px;
   max-width: 1000px;
   margin: auto;
-}
-
-h2 {
-  margin-bottom: 20px;
 }
 
 /* GRID */
@@ -58,31 +78,37 @@ h2 {
 
 /* CARDS */
 .card {
-  background: #020617;
+  background: rgba(255,255,255,0.03);
   padding: 20px;
   border-radius: 12px;
+  backdrop-filter: blur(10px);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  background: #1e293b;
+  transform: translateY(-8px) scale(1.02);
 }
 
-/* SKILLS */
-.skills {
-  text-align: center;
+/* EFECTO GLOW EN DATA */
+.glow {
+  border: 1px solid rgba(59,130,246,0.3);
 }
 
-/* CONTACT */
-.contact {
-  text-align: center;
+/* ANIMACIÓN SCROLL */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
-  background: #020617;
   color: #64748b;
 }
